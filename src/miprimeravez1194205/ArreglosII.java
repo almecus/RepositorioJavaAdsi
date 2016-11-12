@@ -7,6 +7,7 @@ public class ArreglosII {
     public static void main (String [] args){
         
         Scanner read = new Scanner (System.in);
+        
         System.out.println("Ingrese cantidad de usuarios");
         int largo = read.nextInt();
         String[] nombre = new String [largo];
@@ -14,12 +15,20 @@ public class ArreglosII {
         byte[]edad=new byte[largo];
         
         for (int i = 0; i < nombre.length; i++) {
+            read.nextLine();
             System.out.println("Ingrese el dato para el usuario "+ (i+1));
             nombre[i] = read.nextLine();
             System.out.println("Ingrese el año de nacimiento para el usuario "+ (i+1));
             nacimiento[i]=read.nextInt();
             edad[i]=(byte)(2016-nacimiento[i]);
         }
+        int indice=0;
+        int i= 0;
+        while (indice<edad.length){
+            System.out.println(nombre[i] + " tiene aproximadamente " + edad[i]+" años");
+            indice++;
+            i++;
+        }
     }
-    
+        
 }
